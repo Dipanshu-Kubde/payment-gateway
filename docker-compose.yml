@@ -95,7 +95,9 @@ services:
     ports:
       - "8080:8080"
     environment:
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
       EUREKA_URL: http://eureka-server:8761/eureka/
+      SPRING_DATA_REDIS_HOST: redis
       REDIS_HOST: redis
       JWT_SECRET: ${JWT_SECRET:-dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBqd3QgdG9rZW4gZ2VuZXJhdGlvbiBpbiB0aGUgcGF5bWVudCBnYXRld2F5IHN5c3RlbQ==}
     depends_on:
@@ -120,8 +122,8 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
-      REDIS_HOST: redis
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_DATA_REDIS_HOST: redis
       JWT_SECRET: ${JWT_SECRET:-dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBqd3QgdG9rZW4gZ2VuZXJhdGlvbiBpbiB0aGUgcGF5bWVudCBnYXRld2F5IHN5c3RlbQ==}
     depends_on:
       mysql:
@@ -143,8 +145,8 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
-      REDIS_HOST: redis
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_DATA_REDIS_HOST: redis
     depends_on:
       mysql:
         condition: service_healthy
@@ -167,7 +169,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
     depends_on:
       mysql:
         condition: service_healthy
@@ -188,8 +190,8 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
-      REDIS_HOST: redis
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_DATA_REDIS_HOST: redis
     depends_on:
       mysql:
         condition: service_healthy
@@ -212,7 +214,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
     depends_on:
       mysql:
         condition: service_healthy
@@ -233,7 +235,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EUREKA_URL: http://eureka-server:8761/eureka/
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka-server:8761/eureka/
     depends_on:
       mysql:
         condition: service_healthy
